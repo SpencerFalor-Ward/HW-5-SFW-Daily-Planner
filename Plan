@@ -1,0 +1,15 @@
+Create a day planner that allows user to save events for each hour of the day
+
+app needs to display
+    -Time
+    -field to hold user input
+    -save button
+        - clicking on the save button will store the time and user input in localStorage.
+
+At top of the calendar the current day should be displayed
+
+Each hour should be color codded such that the past, present and future are identifiable and it will change depending on the time of day
+    - this is where Moment.js comes in
+
+Use moment.js to work with date and time
+    concentrate using Momemnt.js in the browser
