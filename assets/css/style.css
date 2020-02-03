@@ -1,38 +1,35 @@
-body{
-
-    /* background-image: url(../images/country-quilt-dark.png); */
-    /* background-image: url(../images/dark_leather.png); */
-    /* background-image: url(../images/curls.png); */
-    background-image: url(../images/twinkle_twinkle.png);
+body {
+  /* background-image: url(../images/country-quilt-dark.png); */
+  /* background-image: url(../images/dark_leather.png); */
+  /* background-image: url(../images/curls.png); */
+  background-image: url(../images/twinkle_twinkle.png);
 }
 
 .header {
-    background-color: gold;
-    border: 8PX goldenrod outset;
-    text-align: center;
+  background-color: gold;
+  border: 8px goldenrod outset;
+  text-align: center;
 }
 
 .jumbotron {
-    background-image: url(../images/twinkle_twinkle.png);
-    /* background-image: url(../images/curls.png); */
-    background-image: url(../images/country-quilt-dark.png);
-    /* background-color: black; */
-    border: 2px gold outset;
-    margin: 0.5%;
+  background-image: url(../images/twinkle_twinkle.png);
+  /* background-image: url(../images/curls.png); */
+  background-image: url(../images/country-quilt-dark.png);
+  /* background-color: black; */
+  border: 2px gold outset;
+  margin: 0.5%;
 }
 .hoursBox {
-    align-content: center;
-    flex-flow: wrap;
-
-
+  align-content: center;
+  flex-flow: wrap;
+  flex-direction: column;
 }
-.card{
-    align-items: center;
-    flex-direction: row!important;
+.card {
+  align-items: center;
 }
 
-.btn-outline-warning{
-    display: inline-flex;
-    color: black!important;
-    margin:1%;
+.btn-outline-warning {
+  display: inline-flex;
+  color: black !important;
+  margin: 1%;
 }

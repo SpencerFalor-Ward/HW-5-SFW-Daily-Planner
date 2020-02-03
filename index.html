@@ -26,7 +26,17 @@
         <p class="lead">Here is what you have going on for: Date and Time</p>
       </div>
     </div>
+  <!-- container for the hour cards -->
     <div class="d-flex justify-content-center flex-column col-md-auto hoursBox">
+      <!-- 8 am -->
+      <div class="card">
+        <div class="card-body">
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
+        </div>
+        <button type="button" class="btn btn-outline-warning">Save</button>
+        </div>
+        <!-- 9 am  -->
       <div class="card">
         <div class="card-body">
           This is some text within a card body i am writing this to see what
@@ -34,72 +44,80 @@
         </div>
         <button type="button" class="btn btn-outline-warning">Save</button>
       </div>
+      <!-- 10 am  -->
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
+        </div>
+        <button type="button" class="btn btn-outline-warning">Save</button>
+        </div>
+        <!-- 11 am  -->
+      <div class="card">
+        <div class="card-body">
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
         </div>
         <button type="button" class="btn btn-outline-warning">Save</button>
       </div>
+      <!-- 12 pm  -->
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
+          </div>
+          <button type="button" class="btn btn-outline-warning">Save</button>
+        </div>
+        <!-- 1 pm  -->
+      <div class="card">
+        <div class="card-body">
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
         </div>
         <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
+        </div>
+        <!-- 2 pm  -->
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
         </div>
         <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
+        </div>
+        <!-- 3 pm  -->
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
+          </div>
+          <button type="button" class="btn btn-outline-warning">Save</button>
+        </div>
+        <!-- 4 pm -->
+      <div class="card">
+        <div class="card-body">
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
         </div>
         <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
+        </div>
+        <!-- 5 pm  -->
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
         </div>
         <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
+        </div>
+        <!-- 6 pm  -->
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          This is some text within a card body i am writing this to see what
+          happens when the text is longer then the other boxes.
         </div>
         <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          This is some text within a card body.
         </div>
-        <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          This is some text within a card body.
-      Save
-        <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          This is some text within a card body.
-        </div>
-        <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          This is some text within a card body.
-        </div><button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          This is some text within a card body.
-        </div>
-        <button type="button" class="btn btn-outline-warning">Save</button>
-      </div>
-    </div>
+
+
     <div id="clock"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -122,14 +140,21 @@
 
     <script type="text/javascript" src="./assets/JS/moment.js"></script>
     <script type="text/javascript">
-      function test() {
-        // var dateTime = moment().format();
-        var displayClock = document.getElementById("#clock");
-        var elP = document.createElement("h1");
-        document.getElementById.appendChild(elP);
-        console.log(dateTime);
-      }
-      test();
+    var cardInput = $(".card");
+var todo = $("<form>");
+
+cardInput.click(function() {
+//   var todo = $("<form>");
+  cardInput.add(todo);
+});
+      // function test() {
+      //   // var dateTime = moment().format();
+      //   var displayClock = document.getElementById("#clock");
+      //   var elP = document.createElement("<>");
+      //   displayClock.append(elP);
+      //   console.log(dateTime);
+      // }
+      // test();
       // moment().format();
     </script>
   </body>
