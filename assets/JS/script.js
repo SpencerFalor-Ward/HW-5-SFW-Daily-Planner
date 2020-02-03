@@ -10,26 +10,42 @@ var todos = [];
 
 $(document).ready(function() {
   cardInput.click(function(event) {
-    event.preventDefault();
-    $(this)
-      .append(form)
-      .append(formContents);
+    // event.preventDefault();
+    $(this).append(form);
+    form.append(formContents);
   });
 
+for (var i = 0; i < todos.length; i++) {
+    var todo = todos[i];
+    var li = $("<li>");
+  li.text(todo);
+  li.attr("data-index", i);
+}
   save.click(function(event) {
-    event.preventDefault();
-    // $(this).append(
-    for (var i = 0; i < todos.length; i++) {
-      var todo = todos[i];
-      var li = $("<li>");
-      li.text(todo);
-      li.attr("data-index", i);
-      
-    }
-    // )
-  });
-});
+      event.stopPropagation();
+      // $(this).append(
+          for (var i = 0; i < todos.length; i++) {
+              var todo = todos[i];
+              var li = $("<li>");
+              li.text(todo);
+              li.attr("data-index", i);
+            }
+            var li = $("<li>");
+            var list = $(this).before(li);
+            $("card-body").wrap(list);
+            // )
+        });
+    });
 
+
+//possible code to target specific click
+    // function handler (event) {
+    //     var target = $(event.target);
+    //     if (target.is("li")) {
+    //         target.children().toggle();
+    //     }
+    // }
+    // $("ul").click(handler).find("ul").hide();
 //   cardInput.on("click", function() {
 //     $(".cardTest").append(
 //       // Creating Form Div and Adding <h2> and <p> Paragraph Tag in it.
