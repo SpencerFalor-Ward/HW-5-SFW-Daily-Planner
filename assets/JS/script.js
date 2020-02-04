@@ -3,8 +3,10 @@ var form = $("<form>");
 var formContents = $("<input>", {
   type: "text",
   id: "input",
+
   placeholder: "What's going down?"
 });
+var headerDateTime = $(".lead");
 var input = $("#input");
 var save = $(".btn");
 var dateTime = $(".dateTime");
@@ -12,11 +14,14 @@ var todos = [];
 
 // var m = moment (); = date and time now
 var m = moment();
-var mDate = m.format("DD-MM-YYYY");
+var mDate = m.format("MM-DD-YYYY");
+var mDay = m.format("dddd");
 var mHour = m.format("HH");
 var timeSlot = $("<h3>");
-timeSlot.text(`${mDate} ${mHour}`);
+timeSlot.text(`${mHour}`);
 dateTime.append(timeSlot);
+headerDateTime.text(`Heres whats happenings: ${mDay} ${mDate}`);
+
 console.log(timeSlot);
 
 $(document).ready(function() {
@@ -29,12 +34,12 @@ $(document).ready(function() {
     $(this).append(form);
   });
 
-  for (var i = 0; i < todos.length; i++) {
-    var todo = todos[i];
-    var li = $("<li>");
-    li.text(todo);
-    li.attr("data-index", i);
-  }
+  // for (var i = 0; i < todos.length; i++) {
+  //   var todo = todos[i];
+  //   var li = $("<li>");
+  //   li.text(todo);
+  //   li.attr("data-index", i);
+  // }
   //below is similar to renderTodos on class activity
   save.click(function(event) {
     event.stopPropagation();
@@ -50,6 +55,7 @@ $(document).ready(function() {
     // $("card-body").wrap(list);
     // )
     storeTodos($(this).data("time"));
+    form.empty();
     populateTodos();
   });
 
@@ -57,9 +63,11 @@ $(document).ready(function() {
     // Stringify and set "todos" key in localStorage to todos array
     localStorage.setItem(
       id,
-      $("input")
-        .val()
-        .trim()
+      "&#x1f4a3" +
+        $("input")
+          .val()
+          .trim() +
+        "&#x1f4a3"
     );
   }
 
@@ -67,7 +75,7 @@ $(document).ready(function() {
     var timeArray = [8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6];
     for (var i = 0; i < timeArray.length; i++) {
       var p = $("<p>").text(localStorage.getItem(`${timeArray[i]}am`));
-      $(`#${timeArray[i]}am`).prepend(p);
+      $(`#${timeArray[i]}am`).append(p);
     }
   }
 

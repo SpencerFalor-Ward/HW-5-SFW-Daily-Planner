@@ -19,17 +19,31 @@ body {
   border: 2px gold outset;
   margin: 0.5%;
 }
-.hoursBox {
+.card {
   align-content: center;
   flex-flow: wrap;
-  flex-direction: column;
+  flex-direction: row !important;
+  align-items: center !important;
 }
-.card {
-  align-items: center;
+.dateTime {
+  border-right: 2px black;
+  margin: 1%;
+}
+.card-body {
+  text-align: center;
+  max-width:80%;
 }
 
 .btn-outline-warning {
   display: inline-flex;
   color: black !important;
-  margin: 1%;
+  margin-right: 2%;
+
+}
+form{
+  align-content: center;
+  flex-flow: wrap;
+  flex-direction: row !important;
+  align-items: center !important;
+
 }
