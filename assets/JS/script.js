@@ -11,41 +11,67 @@ var todos = [];
 $(document).ready(function() {
   cardInput.click(function(event) {
     // event.preventDefault();
-    $(this).append(form);
     form.append(formContents);
+    form.click(function(event) {
+      event.stopPropagation();
+    })
+    $(this).append(form);
   });
 
-for (var i = 0; i < todos.length; i++) {
+  for (var i = 0; i < todos.length; i++) {
     var todo = todos[i];
     var li = $("<li>");
-  li.text(todo);
-  li.attr("data-index", i);
-}
+    li.text(todo);
+    li.attr("data-index", i);
+  }
+  //below is similar to renderTodos on class activity
   save.click(function(event) {
-      event.stopPropagation();
-      // $(this).append(
-          for (var i = 0; i < todos.length; i++) {
-              var todo = todos[i];
-              var li = $("<li>");
-              li.text(todo);
-              li.attr("data-index", i);
-            }
-            var li = $("<li>");
-            var list = $(this).before(li);
-            $("card-body").wrap(list);
-            // )
-        });
-    });
+    event.stopPropagation();
+    // $(this).append(
+    for (var i = 0; i < todos.length; i++) {
+      var todo = todos[i];
+      var li = $("<li>");
+      li.text(todo);
+      li.attr("data-index", i);
+    }
+    var li = $("<li>");
+    var list = $(this).before(li);
+    $("card-body").wrap(list);
+    // )
+  });
 
+  function storeTodos() {
+    // Stringify and set "todos" key in localStorage to todos array
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
+
+  save.click(function(event) {
+    event.preventDefault();
+
+    var todoText = todoInput.value.trim();
+
+    // Return from function early if submitted todoText is blank
+    if (todoText === "") {
+      return;
+    }
+    // Add new todoText to todos array, clear the input
+    todos.push(todoText);
+    todoInput.value = "";
+
+    // Store updated todos in localStorage, re-render the list
+    storeTodos();
+    renderTodos();
+  });
+});
 
 //possible code to target specific click
-    // function handler (event) {
-    //     var target = $(event.target);
-    //     if (target.is("li")) {
-    //         target.children().toggle();
-    //     }
-    // }
-    // $("ul").click(handler).find("ul").hide();
+// function handler (event) {
+//     var target = $(event.target);
+//     if (target.is("li")) {
+//         target.children().toggle();
+//     }
+// }
+// $("ul").click(handler).find("ul").hide();
 //   cardInput.on("click", function() {
 //     $(".cardTest").append(
 //       // Creating Form Div and Adding <h2> and <p> Paragraph Tag in it.
