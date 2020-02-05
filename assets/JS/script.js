@@ -1,4 +1,5 @@
 var cardInput = $(".card");
+var cardBody = $('.card-body');
 var form = $("<form>");
 var formContents = $("<input>", {
   type: "text",
@@ -22,27 +23,31 @@ var mHour = m.format("HH");
 // dateTime.append(timeSlot);
 headerDateTime.text(`Heres whats happenings: ${mDay} ${mDate}`);
 
-
+function popDateTime (){
 var timeArray = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 for (var i = 0; i < timeArray.length; i++) {
-  var timeSlot = $("<h3>").text(`${timeArray[i]}`);
+  var timeSlot = dateTime.text(`${timeArray[i]}`);
   $(`#${timeArray[i]}`).append(timeSlot);
-  // timeSlot.text(`${mHour}`);
-  // dateTime.append(timeSlot);
-}
-function cardColor(){
-  if (timeSlot.text() < mHour){
-cardInput.css("background-color", "red" );
-  }
-  else if (timeSlot == mHour){
-  cardInput.css("background-color", "gray" );
-}
-else (timeSlot > mHour)
-  cardInput.css("background-color", "green" )
+  timeSlot.text(`${mHour}`);
+  dateTime.append(timeSlot);
 }
 
-  cardColor();
-console.log(cardColor());
+function cardColor(){
+  var test = parseInt(timeSlot.text());
+  var mHourInt = parseInt(mHour);
+  if (test < mHourInt){
+    cardInput.css("background-color", "red" );
+  }
+  else if (test == mHourInt){
+    cardInput.css("background-color", "gray" );
+  }
+  else (test > mHourInt)
+  cardInput.css("background-color", "green" );
+}
+cardColor();
+}
+popDateTime();
+
 
 $(document).ready(function() {
   cardInput.click(function() {
@@ -52,6 +57,13 @@ $(document).ready(function() {
       event.stopPropagation();
     });
     $(this).append(form);
+    var idArray = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+    for (var i = 0; i < idArray.length; i++) {  
+  var idTarget = `id = ${idArray[i]}`;
+  var cardClear = cardBody.attr(idTarget);
+  $(cardClear).empty();
+  console.log(idTarget);
+}
   });
   
   // for (var i = 0; i < todos.length; i++) {
@@ -80,22 +92,14 @@ $(document).ready(function() {
         });
         
         function storeTodos(id) {
-          // Stringify and set "todos" key in localStorage to todos array
-          localStorage.setItem(
-            id,
-            $("input")
-            .val()
-            .trim()
-            );
+   
+          localStorage.setItem(id, $("input").val().trim());
 }
-          
-          
-        
         function populateTodos() {
           var timeArray = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
           for (var i = 0; i < timeArray.length; i++) {
-            var p = $("<p>").text(localStorage.getItem(`${timeArray[i]}`));
-            $(`#${timeArray[i]}`).append(p);
+            var li = $("<li>").text(localStorage.getItem(`${timeArray[i]}`));
+            $(`#${timeArray[i]}`).append(li);
           }
         }
         
@@ -104,6 +108,7 @@ $(document).ready(function() {
                               
                             
   populateTodos();
+  // storeTodos();
 });
 
 //   save.click(function(event) {
