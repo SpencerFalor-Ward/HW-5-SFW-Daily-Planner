@@ -48,10 +48,20 @@ $(document).ready(function() {
 
   save.click(function(event) {
     event.stopPropagation();
-
     storeTodos($(this).data("time"));
     form.empty();
     populateTodos();
+  });
+  
+
+  save.click(function(event) {
+    event.stopPropagation();
+    var timeArray = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+    $(".card").each(function(index) {
+    var emptyCard = $(this).find(`#${timeArray[index]}`);
+    if (emptyCard.text() =="Click to add appointment"){
+      emptyCard.empty();}
+    });
   });
 
   function storeTodos(id) {
@@ -62,18 +72,20 @@ $(document).ready(function() {
       .trim()
       );
     }
+console.log(save);
     function populateTodos() {
       var timeArray = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-      // for (var i = 0; i < timeArray.length; i++) {
-        // var li = $("<li>").text(localStorage.getItem(`${timeArray[i]}`));
-        //   $(`#${timeArray[i]}`).append(li);
-        // }
-        $(".card-body").each(function(index) {
-          var li = $("<li>").text(localStorage.getItem(timeArray[index]);
-        var h3InCard = $(this).find(".dateTime");
-        h3InCard.text(timeArray[index]);
-      })
+      for (var i = 0; i < timeArray.length; i++) {
+        var li = $("<li>").text(localStorage.getItem(`${timeArray[i]}`));
+          $(`#${timeArray[i]}`).append(li);
+      // var li = $("<li>").text(localStorage.getItem(timeArray[index]));
+      // $(timeArray[index]).append(li);
+        }
+      //   $(".card").each(function(index) {
+      //   // var popTodos = $(this).find(".card-body");
+      //   // popTodos.text(timeArray[index]);
+      // })
     }
     populateTodos();
-    // storeTodos();
+    storeTodos();
   });
