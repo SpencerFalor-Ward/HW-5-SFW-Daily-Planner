@@ -22,6 +22,7 @@ just open the page
 
 Click on a time slot and an input will pop up for your plans/tasks to be added. Click save to add the input to the planner  
 
+![Daily Planner demo](./dailyPlannerDemo.gif)
 
 ## License
 
