@@ -1,4 +1,4 @@
-# :book: [Welcome to SpencerFalor-Ward's Daily Planner](https://book-searcher-sfw.herokuapp.com/) :book:
+# :book: [Welcome to SpencerFalor-Ward's Daily Planner](https://spencerfalor-ward.github.io/Sfw-Daily-Planner) :book:
 
 [![Followers](https://img.shields.io/github/followers/SpencerFalor-Ward?style=social)](https://github.com/SpencerFalor-Ward?tab=followers) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Language](https://img.shields.io/github/languages/top/SpencerFalor-Ward/Sfw-Daily-Planner)](https://github.com/SpencerFalor-Ward/Sfw-Daily-Planner/search?l=javascript) [![Latest Commit](https://img.shields.io/github/last-commit/SpencerFalor-Ward/Sfw-Daily-Planner)](https://github.com/SpencerFalor-Ward/Sfw-Daily-Planner/graphs/commit-activity)
 
